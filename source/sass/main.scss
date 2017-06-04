@@ -167,7 +167,8 @@
 		background: _palette(border-bg);
 		border-radius: _size(border-radius);
 		border: solid 2px _palette(border);
-		font-family: _font(family-fixed);
+		// font-family: _font(family-fixed);
+		font-family: _font(family2);
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -175,8 +176,10 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: _font(family-fixed);
+		// font-family: _font(family-fixed);
+		font-family: _font(family2);
 		font-size: 0.9em;
+		font-weight: _font(weight);
 		margin: 0 0 _size(element-margin) 0;
 
 		code {
@@ -184,6 +187,72 @@
 			line-height: 1.75em;
 			padding: 1em 1.5em;
 			overflow-x: auto;
+		}
+	}
+
+	pre {
+		.comment,
+		.title {
+			color: _highlight(highlight-comment)
+		}
+
+		.variable,
+		.attribute,
+		.tag,
+		.regexp,
+		.ruby .constant,
+		.xml .tag .title,
+		.xml .pi,
+		.xml .doctype,
+		.html .doctype,
+		.css .id,
+		.css .class,
+		.css .pseudo {
+			color: _highlight(highlight-red)
+		}
+
+		.number,
+		.preprocessor,
+		.built_in,
+		.literal,
+		.params,
+		.constant {
+			color: _highlight(highlight-orange)
+		}
+
+		.class,
+		.ruby .class .title,
+		.css .rules .attribute {
+			color: _highlight(highlight-green)
+		}
+
+		.string,
+		.value,
+		.inheritance,
+		.header,
+		.ruby .symbol,
+		.xml .cdata {
+			color: _highlight(highlight-green)
+		}
+
+		.css .hexcolor {
+			color: _highlight(highlight-aqua)
+		}
+
+		.function,
+		.python .decorator,
+		.python .title,
+		.ruby .function .title,
+		.ruby .title .keyword,
+		.perl .sub,
+		.javascript .title,
+		.coffeescript .title {
+			color: _highlight(highlight-blue)
+		}
+
+		.keyword,
+		.javascript .function {
+			color: _highlight(highlight-purple)
 		}
 	}
 
@@ -716,6 +785,27 @@
 	dl {
 		margin: 0 0 _size(element-margin) 0;
 	}
+
+/* highlight figure */
+.highlight {
+	table {
+		tbody {
+			tr {
+				&:nth-child(2n + 1) {
+					background-color: _highlight(highlight-background);
+				}
+			}
+		}
+
+		td {
+			padding: 0.75em 0.75em 0.75em 0;
+			&:nth-child(2n + 1) {
+				padding: 0.75em 0 0.75em 0.75em;
+				width: 3em;
+			}
+		}
+	}
+}
 
 /* Table */
 

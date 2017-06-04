@@ -32,3 +32,10 @@
 @function _size($keys...) {
 	@return val($size, $keys...);
 }
+
+/// Gets a highlight value.
+/// @param {string} $keys Key(s).
+/// @return {string} Value.
+@function _highlight($keys...) {
+	@return val($highlight, $keys...);
+}
